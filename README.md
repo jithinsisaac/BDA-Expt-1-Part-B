@@ -28,8 +28,8 @@ To create an HTML Web form using Bootstrap, link it to the MariaDB database usin
 - Basic bootstrap structure with Navbar and Forms will be explained
 - insert.php file to link HTML with PHP and then PHP to the database will be taught
 - Every student will be required to create their own complete form which should be functional for CRUD operations
-- **PLEASE ADD OVER HERE PROCEDURE THAT YOU FOLLOWED FOR THE EXPERIMENT**
-- **ADD SCREENSHOTS OF YOUR OUTPUT HERE (Learn how to insert images in .md format)**
+- **PLEASE ADD OVER HERE THE PROCEDURE THAT YOU FOLLOWED FOR COMPLETING THE EXPERIMENT**
+- **ADD SCREENSHOTS OF YOUR OUTPUT HERE (Learn how to insert images in markdown format using https://www.markdownguide.org/basic-syntax/#images)**
 
 ### Submission 
 - **Submitted on** 4-8-2020
