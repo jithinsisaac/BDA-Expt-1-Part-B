@@ -3,7 +3,7 @@ Department of Electronics & Telecommunciation,
 Don Bosco Institute of Technology, Mumbai.  
 Course Coordinator: Mr. Jithin Isaac
 
-### Laboratory Experiment No. 1 Part A
+### Laboratory Experiment No. 1 Part B
 
  **NOTE:** This experiment was to be conducted in the previous semester for the subject of DBMS. Due to the pandemic situation, it has been included in the subject of BDA. Going further, we will use HTML forms with MongoDB to give it a flavour of the big data atmosphere.
 
