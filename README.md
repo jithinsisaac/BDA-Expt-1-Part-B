@@ -29,12 +29,12 @@ To create an HTML Web form using Bootstrap, link it to the MariaDB database usin
 - index.html, insert.php, view.php, update.php, delete.php are used to learn this topic
 - Basic bootstrap structure with Navbar and Forms will be explained
 - insert.php file to link HTML with PHP and then PHP to the database will be taught, using the INSERT SQL statement
-- SELECT, UPDATE, DELTE SQL statements will need to be studied by the students by observing the demo code given
+- SELECT, UPDATE, DELETE SQL statements will need to be studied by the students by observing the demo code given
 - Every student will be required to create their own complete form which should be functional for CRUD operations
 - Students will need to demo their output for a particular use case of their own
 
 ### Procedure 
-- **PLEASE ADD OVER HERE THE PROCEDURE THAT YOU FOLLOWED FOR COMPLETING THE EXPERIMENT**
+- **ADD THE PROCEDURE THAT YOU FOLLOWED FOR COMPLETING THE EXPERIMENT HERE**
 
 ### Output
 - **ADD SCREENSHOTS OF YOUR OUTPUT HERE**  
