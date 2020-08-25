@@ -28,7 +28,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">BDA Expt 1</a>
+      <a class="navbar-brand" href="index.html">BDA Expt 1-B</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -66,104 +66,7 @@
       </div>
     </nav>
 
-    <h3><span  style="color:blue">View </span>data from database</h3><br>
-
-    <h4>View Entire Table content (SELECT * FROM table)</h4>
-    <form method="post"> 
-      <button type="submit" class="btn btn-info" name="submit1">Click here</button>
-    </form>
-    <br>   
-
-    <?php
-      include 'sqlconnect.php';         
-
-      if(isset($_POST['submit1'])){ 
-        //print_r ($_POST);
-        $selectQuery = "SELECT * FROM info"; 
-        $result1 = mysqli_query($conn,$selectQuery);
-
-        if (mysqli_num_rows($result1) > 0) 
-        { 
-          echo " <table>
-          <tr>
-            <th>ID</th> 
-            <th>First Name</th>
-            <th>Last Name</th> 
-            <th>Gender</th>
-            <th>Email</th> 
-            <th>Mobile</th> 
-          </tr>";
-
-          while($row = mysqli_fetch_array($result1)) 
-          {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"]. "</td><td>" . $row["lname"] . "</td><td>" . $row["gender"] . "</td><td>" . $row["email"] . "</td><td>" . $row["mobile"] . "</td></tr>";
-          }
-          echo "</table>";
-        }
-        else{
-        echo "0 results";
-        }
-        $conn->close();
-      }
-    ?>
-  
-    <hr>
-    <br> 
-
-    <h4>View Data filtered by Mobile Number (SELECT * FROM table_name WHERE condition)</h4>
-    <form method="post">
-      <div class="form-row">
-        <div class="form-group col-md-3"> 
-          <input type="tel" class="form-control" pattern="[0-9]{10}" id="inputMobile" placeholder="Enter Mobile number" name="mobile" />
-        </div>
-      </div> 
-      <button type="submit" class="btn btn-info" name="submit2">Click here</button>
-    </form> 
-    <br>   
-
-    <?php
-      include 'sqlconnect.php';     
-      $success = "";
-      $failure = "";  
-
-      if(array_key_exists("mobile",$_POST)){ 
-
-        //print_r ($_POST);
-        $selectwhereQuery = "SELECT * FROM info WHERE mobile = $_POST[mobile]"; 
-        $result2 = mysqli_query($conn,$selectwhereQuery);
-
-        if (mysqli_num_rows($result2) > 0) 
-        {
-          // output data of each row
-          echo " <table>
-          <tr>
-            <th>ID</th> 
-            <th>First Name</th>
-            <th>Last Name</th> 
-            <th>Gender</th>
-            <th>Email</th> 
-            <th>Mobile</th> 
-          </tr>";
-
-          while($row = mysqli_fetch_array($result2)) 
-          {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"]. "</td><td>" . $row["lname"] . "</td><td>" . $row["gender"] . "</td><td>" . $row["email"] . "</td><td>" . $row["mobile"] . "</td></tr>";
-          }
-          echo "</table>";
-        }
-        else{
-        echo "0 results";
-        }
-        if (!$result2){ 
-          $failure = "Error viewing data. Please check mobile number again.";
-        }
-        $conn->close();        
-      }
  
-      if($failure){
-        echo "<div class='alert alert-danger col-sm-4' role='alert'>".$failure."</div>";
-      }  
-    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

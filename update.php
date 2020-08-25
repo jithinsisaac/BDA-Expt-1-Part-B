@@ -28,7 +28,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">BDA Expt 1</a>
+      <a class="navbar-brand" href="index.html">BDA Expt 1-B</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -66,111 +66,7 @@
         </span>
       </div>
     </nav>
-
-    <h3><span  style="color:orange">Update </span>data in database</h3><br>
-
-    <h4>View Entire Table content (SELECT * FROM table)</h4>
-    <form method="post"> 
-      <button type="submit" class="btn btn-info" name="submit1">Click here</button>
-    </form>
-    <br>   
-
-    <?php
-      include 'sqlconnect.php';         
-
-      if(isset($_POST['submit1'])){ 
-        //print_r ($_POST);
-        $selectQuery = "SELECT * FROM info"; 
-        $result1 = mysqli_query($conn,$selectQuery);
-
-        if (mysqli_num_rows($result1) > 0) 
-        { 
-          echo " <table>
-          <tr>
-            <th>ID</th> 
-            <th>First Name</th>
-            <th>Last Name</th> 
-            <th>Gender</th>
-            <th>Email</th> 
-            <th>Mobile</th> 
-          </tr>";
-
-          while($row = mysqli_fetch_array($result1)) 
-          {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"]. "</td><td>" . $row["lname"] . "</td><td>" . $row["gender"] . "</td><td>" . $row["email"] . "</td><td>" . $row["mobile"] . "</td></tr>";
-          }
-          echo "</table>";
-        }
-        else{
-        echo "0 results";
-        }
-        $conn->close();
-      }
-    ?>
-   
-    <hr>
-    <br> 
-
-    <h4>Update Data filtered by Mobile Number (UPDATE table_name SET new_data WHERE condition)</h4>
-    <form method="post">
-      <div class="form-row">
-        <div div class="form-group col-md-3"> 
-            <input type="tel" class="form-control" pattern="[0-9]{10}" id="inputMobile" placeholder="Enter Mobile number" name="mobile" />
-        </div>        
  
-        <div class="form-group col-md-3"> 
-          <?php          
-              include 'sqlconnect.php';  
-              //For Drop Down list of columns of table
-              $dropdownColumnQuery = "SELECT column_name from information_schema.columns where table_schema='form' and table_name='info'"; 
-              $result2 = mysqli_query($conn,$dropdownColumnQuery);
-              echo '<select id="tablecolumns" class="form-control" name="tablecolumns"><option selected disabled>Choose column to update</option>';
-              if ($result2 = mysqli_query($conn,$dropdownColumnQuery)){    
-                  while ($row = mysqli_fetch_array($result2)){
-                      echo '<option value="' . $row['column_name'] . '">' . $row['column_name'] . '</option>';
-                  }
-              }
-              echo '</select>';
-          ?>
-        </div>
-
-        <div class="form-group col-md-3"> 
-          <input type="text" class="form-control" id="updatedata" name="updatedata" placeholder="Enter updated data"/>
-        </div>
-
-      </div>  
-      <button type="submit" class="btn btn-info" name="submit2">Update Data</button>
-    </form> 
-    <br>   
-
-
-    <?php
-      include 'sqlconnect.php';     
-      $success = "";
-      $failure = "";   
-
-      if(array_key_exists("mobile",$_POST) && array_key_exists("tablecolumns",$_POST)){ 
-
-        $updatewhereQuery = "UPDATE info SET $_POST[tablecolumns]='$_POST[updatedata]' WHERE mobile=$_POST[mobile]";
-        //echo "SQL Query: ".$updatewhereQuery; 
-        $result2 = mysqli_query($conn,$updatewhereQuery);
-
-
-        if ($result2){
-          $success = "Row element successfully updated!";  
-        }else{
-          $failure = "Error updating row element.";
-        }
-        $conn->close();        
-      }
- 
-      if($success){
-        echo "<div class='alert alert-success col-sm-3' role='alert'>".$success."</div>";
-      } 
-      if($failure){
-        echo "<div class='alert alert-danger col-sm-3' role='alert'>".$failure."</div>";
-      }  
-    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

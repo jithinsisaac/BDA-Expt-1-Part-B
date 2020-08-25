@@ -20,7 +20,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">BDA Expt 1</a>
+      <a class="navbar-brand" href="index.html">BDA Expt 1-B</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -58,82 +58,7 @@
         </span>
       </div>
     </nav>
-
-    <h3><span  style="color:green">Insert </span>data into database</h3><br>
-
-    <form method="post">
-      <div class="form-row">
-        <div class="form-group col-md-3">
-          <label for="inputFirstName">First Name</label>
-          <input type="text" class="form-control" id="inputFirstName" name="fname"  />
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputLastName">Last Name</label>
-          <input type="text" class="form-control" id="inputLastName" name="lname"/>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-3">
-          <label for="inputGender">Gender</label>
-          <select id="inputGender" class="form-control" name="gender">
-            <option selected disabled>Choose...</option>
-            <option>Male</option>
-            <option>Female</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-3">
-          <label for="inputEmail4">Email address</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email"/>
-        </div>
-      </div>  
-
-      <div class="form-row">
-        <div class="form-group col-md-3">
-          <label for="inputMobile">Mobile Number (10 digits without country code)</label>
-          <input type="tel" class="form-control" pattern="[0-9]{10}" id="inputMobile" placeholder="Mobile" name="mobile" />
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-info" name="submit">Submit</button>
-    </form>
-    <br>
-    <div class="form-group">            
-      <?php
-        include 'sqlconnect.php'; 
-
-        $success = "";
-        $failure = "";
-        //print_r ($_POST); 
-      
-        if(array_key_exists("gender",$_POST)){
-      
-          $insertQuery2 = "INSERT INTO info (fname, lname,gender,email,mobile) VALUES ('$_POST[fname]','$_POST[lname]','$_POST[gender]','$_POST[email]',$_POST[mobile])";
-
-          $insertQuery = "INSERT INTO info (fname, lname,gender,email,mobile) VALUES ('".mysqli_real_escape_string($conn,$_POST["fname"])."','".mysqli_real_escape_string($conn,$_POST["lname"])."','".mysqli_real_escape_string($conn,$_POST["gender"])."','".mysqli_real_escape_string($conn,$_POST["email"])."',".mysqli_real_escape_string($conn,$_POST["mobile"]).")";
-          
-          $result = mysqli_query($conn,$insertQuery);
-      
-          if ($result){
-            $success = "Data inserted successfully into database!";  
-          }else{
-            $failure = "Error inserting data into database! (Email & Mobile no. should be unique)";
-          }
-      
-          $conn->close();    
-        }
-          
-        if($success){
-          echo "<div class='alert alert-success col-sm-3' role='alert'>".$success."</div>";
-        } 
-        if($failure){
-          echo "<div class='alert alert-danger col-sm-5' role='alert'>".$failure."</div>";
-        }            
-      ?>
-    </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
