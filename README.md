@@ -24,17 +24,20 @@ To create an HTML Web form using Bootstrap, link it to the MariaDB database usin
 - To create an Virtual instance on AWS EC2
 - To install LAMP stack on the VM and host the site along with the database on it
 
-### Procedure
- 
-#### HTML Form using PHP-MySQL
+### Note
+
 - index.html, insert.php, view.php, update.php, delete.php are used to learn this topic
 - Basic bootstrap structure with Navbar and Forms will be explained
 - insert.php file to link HTML with PHP and then PHP to the database will be taught
 - Every student will be required to create their own complete form which should be functional for CRUD operations
-- **PLEASE ADD OVER HERE THE PROCEDURE THAT YOU FOLLOWED FOR COMPLETING THE EXPERIMENT**
-- **ADD SCREENSHOTS OF YOUR OUTPUT HERE (Learn how to insert images in markdown format using https://www.markdownguide.org/basic-syntax/#images)**
 
-### Submission 
+### Procedure 
+- **PLEASE ADD OVER HERE THE PROCEDURE THAT YOU FOLLOWED FOR COMPLETING THE EXPERIMENT**
+
+### Output
+- **ADD SCREENSHOTS OF YOUR OUTPUT HERE**  
+
+### Submission Details
 - **Submitted on** 4-8-2020
 - **Submitted by** Mr/Ms. XYZ
 - **Roll No.** 111
